@@ -1,25 +1,33 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 import '../styles/app.scss';
+import { Mock } from '../mock.js';
 
 import SocialMedia from '../components/social-media.jsx';
 import ParkInfo from '../components/park-info.jsx';
 import ParkFact from '../components/park-fact.jsx';
+import DonateBtn from '../components/donate-btn.jsx';
 
 const backgroundStyle = {
   background: require('../styles/assets/mock/people-in-parks_yosemite2.jpg'),
   'margin-top': '12px',
 };
 
-// TODO: delete when update with api
-const imageSrc = 'https://travelpast50.com/wp-content/uploads/2015/09/half-dome-yosemite-close-2.jpg';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    const photoCredit = {
+      photographer: Mock.image.photoCredit,
+      web: Mock.image.photoCreditUrl,
+    };
     this.state = {
-      bgImage: imageSrc,
-    }
+      bgImage: Mock.image.url,
+      parkName: Mock.park.name, // Used in ParkInfo
+      parkLink: Mock.park.link, // Used in SocialMedia
+      parkFacts: Mock.facts, // Used in ParkFact
+      photoCredit, // Used in ParkInfo
+    };
   }
 
   render () {
@@ -28,9 +36,13 @@ class App extends React.Component {
         <img className='app__full-bg-img'
           src={this.state.bgImage}/>
         <div className='app__info'>
-          <ParkInfo/>
-          <SocialMedia/>
-          <ParkFact/>
+          <DonateBtn/>
+          <ParkInfo
+            name={ this.state.parkName }
+            credit={ this.state.photoCredit }
+            />
+          <SocialMedia link={ this.state.parkLink } />
+          <ParkFact facts={ this.state.parkFacts }/>
         </div>
       </div>
     );
