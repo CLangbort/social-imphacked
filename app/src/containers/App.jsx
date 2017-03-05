@@ -8,6 +8,7 @@ import SocialMedia from '../components/social-media.jsx';
 import ParkInfo from '../components/park-info.jsx';
 import ParkFact from '../components/park-fact.jsx';
 import DonateBtn from '../components/donate-btn.jsx';
+import VideoLink from '../components/video-link.jsx';
 
 const backgroundStyle = {
   background: require('../styles/assets/mock/people-in-parks_yosemite2.jpg'),
@@ -26,6 +27,7 @@ class App extends React.Component {
       parkName: data.park.name, // Used in ParkInfo
       parkLink: data.park.link, // Used in SocialMedia
       parkFacts: data.facts, // Used in ParkFact
+      parkVideo: data.park.video,
       photoCredit, // Used in ParkInfo
     };
     return state;
@@ -49,6 +51,10 @@ class App extends React.Component {
         <img className='app__full-bg-img'
           src={this.state.bgImage}/>
         <div className='app__info'>
+          {this.state.parkVideo &&
+            <VideoLink
+              link={ this.state.parkVideo } />
+          }
           <DonateBtn/>
           <ParkInfo
             name={ this.state.parkName }

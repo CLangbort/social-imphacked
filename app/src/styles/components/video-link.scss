@@ -1,0 +1,69 @@
+$bg-color: rgba(0, 0, 0, .5);
+$triagnle-color: rgba(255, 255, 255, .8);
+$triangle-color: #ffffff;
+
+.video-link__container {
+  display: flex;
+  position: fixed;
+  right: 0;
+  top: 80px;
+  background-color: $bg-color;
+  width: 175px;
+  height: 75px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  transform: translateX(0);
+  transition: transform 300ms;
+
+  opacity: 0;
+  animation: fade-in 600ms forwards;
+  animation-delay: 100ms;
+}
+
+.video-link__btn-closed {
+  transform: translateX(155px);
+}
+
+.video-link__btn {
+  width: 20px;
+  height: 100%;
+  cursor: pointer;
+  background: $bg-color;
+  border: none;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+
+    // Defining triangle
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 8px solid $triagnle-color;
+    border-right: none;
+  }
+
+  .video-link__btn-closed & {
+    &::before {
+      // Defining triangle
+      border-right: 8px solid $triagnle-color;
+      border-left: none;
+    }
+  }
+}
+
+.video-link__link {
+  width: 110px;
+  text-align: center;
+  margin: auto;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@keyframes fade-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}

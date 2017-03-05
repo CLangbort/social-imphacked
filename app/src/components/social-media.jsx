@@ -3,7 +3,7 @@ import '../styles/components/social-media.scss';
 
 const SOCIAL_MEDIA = {
   facebook: {
-    link: '',
+    link: 'https://www.facebook.com/Fund-for-People-in-Parks-1127588057321437/',
   },
   insta: {
     link: 'https://www.instagram.com/fundforpeopleinparks/',
