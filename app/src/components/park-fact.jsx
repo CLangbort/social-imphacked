@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/components/park-fact.scss';
 
-const FACT_CLASS = 'park-fact__fact park-fact__fact-transition-left';
+const FACT_CLASS = 'park-fact__fact';
 const FACT_ACTIVE_CLASS = 'park-fact__fact park-fact__active';
 
-const TIME_INTERVAL = 5000;
+const TIME_INTERVAL = 30000;
 
 export default class SocialMedia extends React.Component {
   _setActiveFact() {
@@ -40,9 +40,7 @@ export default class SocialMedia extends React.Component {
     this.state.activeKey = 0;
     this.state.factsLen = factsLen;
 
-    setInterval(function() {
-      this.setState(this._setActiveFact);
-    }.bind(this), TIME_INTERVAL);
+    setInterval(this.setState.bind(this, this._setActiveFact), TIME_INTERVAL);
   }
 
   render () {
@@ -50,10 +48,8 @@ export default class SocialMedia extends React.Component {
       <div className='park-fact__container'>
         <ul className='park-fact__list'>
           {this.state.facts.map(function(fact) {
-            // const className = !fact.active ? FACT_CLASS : `${FACT_CLASS} ${FACT_ACTIVE_CLASS}`;
-            const className = !fact.active ? FACT_CLASS : `${FACT_ACTIVE_CLASS}`;
             return (
-              <li className={className}>
+              <li className={!fact.active ? FACT_CLASS : `${FACT_CLASS} ${FACT_ACTIVE_CLASS}`}>
                 {fact.value}
               </li>
             );
