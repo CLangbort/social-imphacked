@@ -2,13 +2,16 @@ $park-fact-size: 900;
 $park-fact-width: $park-fact-size + px;
 $park-fact-margin-left: -($park-fact-size/2) + px;
 
-.park-fact__list {
+.park-fact__container {
   position: fixed;
   width: $park-fact-width;
   left: 50%;
   margin-left: $park-fact-margin-left;
-  text-align: center;
   bottom: 24px;
+}
+
+.park-fact__list {
+  text-align: center;
   line-height: 28px;
   font-size: 18px;
   font-weight: lighter;
@@ -19,12 +22,18 @@ $park-fact-margin-left: -($park-fact-size/2) + px;
 }
 
 .park-fact__fact {
-  display: none;
+  position: absolute;
+  bottom: 0;
   list-style: none;
+  width: $park-fact-width;
+
+  opacity: 0;
+  transition: opacity 350ms
 }
 
 .park-fact__active {
-  display: block;
+  opacity: 1;
+  transition: opacity 350ms
 }
 
 @keyframes fade-in {

@@ -1,12 +1,11 @@
 /* Reset styles here */
-html,
-body {
-  margin:0;
-  height:100%;
-  overflow:hidden;
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
-div, a, h1, h2, h3, h4, p, span {
+div, a, h1, h2, h3, h4, p, span, ul {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #ffffff;
   margin: 0;
