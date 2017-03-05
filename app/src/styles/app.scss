@@ -23,9 +23,17 @@ div, h1, h2, h3, h4, p, span {
   top:-100%; bottom:-100%;
   left:-100%; right:-100%;
   margin:auto;
+
+  opacity: 0;
+  animation: fade-in 600ms forwards;
 }
 
 .app__info {
   position: relative;
   z-index: 1; // relative to 'app__full-bg-img'
+}
+
+@keyframes fade-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
 }
