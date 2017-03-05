@@ -11,9 +11,11 @@ export default class TimeContainer extends React.Component {
     const month = date.toLocaleString(LOCALE, { month: DEFAULT_MONTH_LEN });
     const hours = date.getHours();
     const hours_twelve = hours > 12 ? hours - 12 : hours;
+    const minutes = date.getMinutes();
+    const convertedMin = minutes < 10 ? `0${minutes}` : minutes;
     this.state = {
       day: `${month} ${date.getDate()}`,
-      time: `${hours_twelve}:${date.getMinutes()}`,
+      time: `${hours_twelve}:${convertedMin}`,
     };
   }
 
