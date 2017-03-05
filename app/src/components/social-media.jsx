@@ -1,7 +1,28 @@
 import React from 'react';
 import '../styles/components/social-media.scss';
 
+const SOCIAL_MEDIA = {
+  facebook: {
+    link: '',
+  },
+  insta: {
+    link: 'https://www.instagram.com/fundforpeopleinparks/',
+  },
+  youtube: {
+    link: '',
+  },
+}
+
 export default class SocialMedia extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      facebook: SOCIAL_MEDIA.facebook,
+      insta: SOCIAL_MEDIA.insta,
+      youtube: SOCIAL_MEDIA.youtube,
+    };
+  }
+
   render () {
     return (
       <ul className='social-media'>
@@ -11,24 +32,30 @@ export default class SocialMedia extends React.Component {
               src={ require('../styles/assets/tree-silhouette.svg') } />
           </a>
         </li>
-        <li className='social-media__icon'>
-          <a href='#'>
-            <img className='social-media__icon-image'
-              src={ require('../styles/assets/fb-icon.svg') } />
-          </a>
-        </li>
-        <li className='social-media__icon'>
-          <a href='#'>
-            <img className='social-media__icon-image'
-              src={ require('../styles/assets/youtube-icon.svg') } />
-          </a>
-        </li>
-        <li className='social-media__icon'>
-          <a href='#'>
-            <img className='social-media__icon-image'
-              src={ require('../styles/assets/insta-icon.svg') } />
-          </a>
-        </li>
+        {this.state.facebook.link &&
+          <li className='social-media__icon'>
+            <a href='#'>
+              <img className='social-media__icon-image'
+                src={ require('../styles/assets/fb-icon.svg') } />
+            </a>
+          </li>
+        }
+        {this.state.youtube.link &&
+          <li className='social-media__icon'>
+            <a href='#'>
+              <img className='social-media__icon-image'
+                src={ require('../styles/assets/youtube-icon.svg') } />
+            </a>
+          </li>
+        }
+        {this.state.insta.link &&
+          <li className='social-media__icon'>
+            <a href={ this.state.insta.link }>
+              <img className='social-media__icon-image'
+                src={ require('../styles/assets/insta-icon.svg') } />
+            </a>
+          </li>
+        }
       </ul>
     );
   }

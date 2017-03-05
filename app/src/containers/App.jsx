@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import '../styles/app.scss';
 import { Mock } from '../mock.js';
+import LoadData from '../actions/requests.js'
 
 import SocialMedia from '../components/social-media.jsx';
 import ParkInfo from '../components/park-info.jsx';
@@ -15,22 +16,34 @@ const backgroundStyle = {
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  _fetchData(data) {
     const photoCredit = {
-      photographer: Mock.image.photoCredit,
-      web: Mock.image.photoCreditUrl,
+      photographer: data.image.photoCredit,
+      web: data.image.photoCreditUrl,
     };
-    this.state = {
-      bgImage: Mock.image.url,
-      parkName: Mock.park.name, // Used in ParkInfo
-      parkLink: Mock.park.link, // Used in SocialMedia
-      parkFacts: Mock.facts, // Used in ParkFact
+    const state = {
+      bgImage: 'https://www.nps.gov/common/uploads/photogallery/pwr/park/labe/FD7876CF-1DD8-B71B-0B7080DD537C42FC/FD7876CF-1DD8-B71B-0B7080DD537C42FC.jpg',
+      parkName: data.park.name, // Used in ParkInfo
+      parkLink: data.park.link, // Used in SocialMedia
+      parkFacts: data.facts, // Used in ParkFact
       photoCredit, // Used in ParkInfo
     };
+    return state;
+  }
+
+  constructor(props) {
+    super(props);
+    LoadData().then(function(data) {
+      this.setState(this._fetchData.bind(this, data));
+    }.bind(this));
   }
 
   render () {
+    if (!this.state) {
+      return (
+        <div></div>
+      );
+    }
     return (
       <div>
         <img className='app__full-bg-img'
