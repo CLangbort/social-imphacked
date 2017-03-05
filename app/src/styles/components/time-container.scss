@@ -1,7 +1,18 @@
-$bg-color: #ff66ff;
-$color: #3399ff;
-
 .time-container {
-  background: $bg-color;
-  color: $color;
+  position: fixed;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -100px; /* Negative half of height. */
+}
+
+.time-container__day {
+  font-size: 32px;
+}
+
+.time-container__time {
+  font-weight: bold;
+  font-size: 164px;
+  line-height: 112px;
 }

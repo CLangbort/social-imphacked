@@ -3,12 +3,25 @@ $youtube-icon-postion: -3 0;
 $fb-icon-postion: -77 0;
 $insta-icon-postion: -151 0;
 
+$size: 30px;
+
 .social-media {
-  background: blue;
+  margin: 0;
+  position: fixed;
+  right: 24px;
+  top: 24px;
 }
 
 .social-media__icon {
-  width: 30px;
-  height: 30px;
-  fill: black;
+  display: inline;
+  padding: 0 8px;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.social-media__icon-image {
+  width: $size;
+  height: $size;
 }

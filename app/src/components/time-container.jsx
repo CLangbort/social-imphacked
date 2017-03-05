@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/components/time-container.scss';
 
 const LOCALE = 'en-us';
-const DEFAULT_MONTH_LEN = 'short';
+const DEFAULT_MONTH_LEN = 'long';
 
 export default class TimeContainer extends React.Component {
   constructor(props) {
@@ -20,8 +20,8 @@ export default class TimeContainer extends React.Component {
   render () {
     return (
       <div className='time-container'>
-        {this.state.day}
-        {this.state.time}
+        <p className='time-container__day'>{this.state.day}</p>
+        <p className='time-container__time'>{this.state.time}</p>
       </div>
     );
   }
