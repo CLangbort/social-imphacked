@@ -2,7 +2,6 @@ import React from 'react';
 import {render} from 'react-dom';
 import '../styles/app.scss';
 
-import TimeContainer from '../components/time-container.jsx';
 import SocialMedia from '../components/social-media.jsx';
 import ParkInfo from '../components/park-info.jsx';
 import ParkFact from '../components/park-fact.jsx';
@@ -31,7 +30,6 @@ class App extends React.Component {
         <div className='app__info'>
           <ParkInfo/>
           <SocialMedia/>
-          <TimeContainer/>
           <ParkFact/>
         </div>
       </div>

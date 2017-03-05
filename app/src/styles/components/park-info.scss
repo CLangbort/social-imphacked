@@ -1,16 +1,19 @@
 .park-info {
   position: fixed;
-  left: 24px;
-  top: 24px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -100px; /* Negative half of height. */
+
+  font-weight: lighter;
+  font-size: 164px;
+  line-height: 112px;
+  cursor: default;
 
   opacity: 0;
   animation: fade-in 600ms forwards;
-  animation-delay: 200ms;
-}
-
-.park-info__text {
-  font-size: 14px;
-  line-height: 24px;
+  animation-delay: 250ms;
 }
 
 @keyframes fade-in {

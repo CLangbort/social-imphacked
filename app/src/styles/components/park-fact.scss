@@ -1,4 +1,4 @@
-$park-fact-size: 800;
+$park-fact-size: 900;
 $park-fact-width: $park-fact-size + px;
 $park-fact-margin-left: -($park-fact-size/2) + px;
 
@@ -9,12 +9,13 @@ $park-fact-margin-left: -($park-fact-size/2) + px;
   margin-left: $park-fact-margin-left;
   text-align: center;
   bottom: 24px;
-  line-height: 24px;
-  font-size: 16px;
+  line-height: 28px;
+  font-size: 18px;
+  font-weight: lighter;
 
   opacity: 0;
   animation: fade-in 600ms forwards;
-  animation-delay: 200ms;
+  animation-delay: 100ms;
 }
 
 @keyframes fade-in {
