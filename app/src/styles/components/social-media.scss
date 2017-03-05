@@ -1,0 +1,14 @@
+$bg-icons: url('../assets/people-in-parks_icons.png');
+$youtube-icon-postion: -3 0;
+$fb-icon-postion: -77 0;
+$insta-icon-postion: -151 0;
+
+.social-media {
+  background: blue;
+}
+
+.social-media__icon {
+  width: 30px;
+  height: 30px;
+  fill: black;
+}
