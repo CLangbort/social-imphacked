@@ -41,8 +41,10 @@ class App extends React.Component {
             name={ this.state.parkName }
             credit={ this.state.photoCredit }
             />
-          <SocialMedia link={ this.state.parkLink } />
-          <ParkFact facts={ this.state.parkFacts }/>
+          <SocialMedia
+            parkLink={ this.state.parkLink } />
+          <ParkFact
+            facts={ this.state.parkFacts }/>
         </div>
       </div>
     );

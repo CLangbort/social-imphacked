@@ -6,7 +6,7 @@ export default class SocialMedia extends React.Component {
     return (
       <ul className='social-media'>
         <li className='social-media__icon'>
-          <a href='#'>
+          <a href={this.props.parkLink}>
             <img className='social-media__icon-image'
               src={ require('../styles/assets/tree-silhouette.svg') } />
           </a>
