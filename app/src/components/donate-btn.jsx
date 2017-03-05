@@ -1,21 +1,26 @@
 import React from 'react';
 import '../styles/components/donate-btn.scss';
 
-const DONATE_LINK = 'http://www.peopleinparks.org/contribute.html';
+const PEOPLE_LINK = 'http://www.peopleinparks.org/';
 
 export default class DonateBtn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      donateLink: DONATE_LINK,
+      peopleLink: PEOPLE_LINK,
     }
   }
 
   render () {
     return (
-      <a href={this.state.donateLink} className='donate-btn'>
-        Donate
-      </a>
+      <div className='donate-btn'>
+        <a href={this.state.peopleLink} className='donate-btn__link'>
+          The Fund for People in Parks
+        </a>
+        <div className='donate-btn__info'>
+          We assist Western National Parks by supporting their local groups with project funding and professional consulting.  Please visit our site for more information.
+        </div>
+      </div>
     );
   }
 }

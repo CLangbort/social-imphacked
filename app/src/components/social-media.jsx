@@ -34,7 +34,7 @@ export default class SocialMedia extends React.Component {
         </li>
         {this.state.facebook.link &&
           <li className='social-media__icon'>
-            <a href='#'>
+            <a href={ this.state.facebook.link }>
               <img className='social-media__icon-image'
                 src={ require('../styles/assets/fb-icon.svg') } />
             </a>
@@ -42,7 +42,7 @@ export default class SocialMedia extends React.Component {
         }
         {this.state.youtube.link &&
           <li className='social-media__icon'>
-            <a href='#'>
+            <a href={ this.state.youtube.link }>
               <img className='social-media__icon-image'
                 src={ require('../styles/assets/youtube-icon.svg') } />
             </a>
