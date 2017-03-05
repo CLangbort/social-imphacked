@@ -22,7 +22,7 @@ class App extends React.Component {
       web: data.image.photoCreditUrl,
     };
     const state = {
-      bgImage: 'https://www.nps.gov/common/uploads/photogallery/pwr/park/labe/FD7876CF-1DD8-B71B-0B7080DD537C42FC/FD7876CF-1DD8-B71B-0B7080DD537C42FC.jpg',
+      bgImage: data.image.url,
       parkName: data.park.name, // Used in ParkInfo
       parkLink: data.park.link, // Used in SocialMedia
       parkFacts: data.facts, // Used in ParkFact
