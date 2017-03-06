@@ -8,6 +8,8 @@ const TIMEOUT = 5000;
 
 export default class VideoLink extends React.Component {
   _toggleVideoBtn() {
+    clearTimeout(this.timeout);
+
     this.setState((prevState, props) => {
       prevState.open = !prevState.open;
       return prevState;
@@ -21,7 +23,7 @@ export default class VideoLink extends React.Component {
       open: true,
     }
 
-    setTimeout(this._toggleVideoBtn.bind(this), TIMEOUT);
+    this.timeout = setTimeout(this._toggleVideoBtn.bind(this), TIMEOUT);
   }
 
   render () {
