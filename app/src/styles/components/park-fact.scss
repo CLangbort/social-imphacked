@@ -12,8 +12,6 @@ $park-fact-margin-left: -($park-fact-size/2) + px;
 
 .park-fact__list {
   text-align: center;
-  line-height: 28px;
-  font-size: 18px;
 
   opacity: 0;
   animation: fade-in 600ms forwards;
@@ -33,6 +31,14 @@ $park-fact-margin-left: -($park-fact-size/2) + px;
 .park-fact__active {
   opacity: 1;
   transition: opacity 350ms
+}
+
+.park-fact__btn-text {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 28px;
+  font-size: 18px;
 }
 
 @keyframes fade-in {

@@ -35,6 +35,12 @@ export default class SocialMedia extends React.Component {
     return state;
   }
 
+  _nextFact() {
+    clearInterval(this.interval);
+    this.setState.call(this, this._setActiveFact)
+    this.interval = setInterval(this.setState.bind(this, this._setActiveFact), TIME_INTERVAL);
+  }
+
   constructor(props) {
     super(props);
 
@@ -55,7 +61,7 @@ export default class SocialMedia extends React.Component {
     facts[this.state.activeKey].active = true;
 
     // every x seconds (TIME_INTERVAL) update active fact
-    setInterval(this.setState.bind(this, this._setActiveFact), TIME_INTERVAL);
+    // this.interval = setInterval(this.setState.bind(this, this._setActiveFact), TIME_INTERVAL);
   }
 
   render () {
@@ -65,10 +71,14 @@ export default class SocialMedia extends React.Component {
           {this.state.facts.map(function(fact) {
             return (
               <li className={!fact.active ? FACT_CLASS : `${FACT_CLASS} ${FACT_ACTIVE_CLASS}`}>
-                {fact.value}
+                <button
+                  className='park-fact__btn-text'
+                  onClick={this._nextFact.bind(this)}>
+                  {fact.value}
+                </button>
               </li>
             );
-          })}
+          }.bind(this))}
         </ul>
       </div>
     );
