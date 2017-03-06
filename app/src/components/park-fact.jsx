@@ -4,7 +4,7 @@ import '../styles/components/park-fact.scss';
 const FACT_CLASS = 'park-fact__fact';
 const FACT_ACTIVE_CLASS = 'park-fact__fact park-fact__active';
 
-const TIME_INTERVAL = 5000;
+const TIME_INTERVAL = 30000;
 
 export default class SocialMedia extends React.Component {
   _setActiveFact() {
