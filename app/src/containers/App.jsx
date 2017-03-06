@@ -23,7 +23,7 @@ class App extends React.Component {
       web: data.image.photoCreditUrl,
     };
     const state = {
-      bgImage: data.image.url,
+      bgImage: 'https://2.bp.blogspot.com/-zsGPooGbMZM/V54l2w2ruyI/AAAAAAAABvQ/w-OBvCy8NMwoHzPQGYejjIsgvUVpePKTwCLcB/s1600/Fern%2BCave.jpg',
       parkName: data.park.name, // Used in ParkInfo
       parkLink: data.park.link, // Used in SocialMedia
       parkFacts: data.facts, // Used in ParkFact
@@ -48,8 +48,12 @@ class App extends React.Component {
     }
     return (
       <div>
-        <img className='app__full-bg-img'
-          src={this.state.bgImage}/>
+        <div
+          className='app__full-bg-img'
+          style={{
+            background: `url(${this.state.bgImage}) no-repeat center center fixed`,
+            backgroundSize: 'cover',
+          }}></div>
         <div className='app__info'>
           {this.state.parkVideo &&
             <VideoLink
