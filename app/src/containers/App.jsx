@@ -14,7 +14,6 @@ const backgroundStyle = {
   'margin-top': '12px',
 };
 
-
 class App extends React.Component {
   _fetchData(data) {
     const photoCredit = {

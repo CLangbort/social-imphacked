@@ -4,21 +4,33 @@ import '../styles/components/park-fact.scss';
 const FACT_CLASS = 'park-fact__fact';
 const FACT_ACTIVE_CLASS = 'park-fact__fact park-fact__active';
 
-const TIME_INTERVAL = 30000;
+const TIME_INTERVAL = 5000;
 
 export default class SocialMedia extends React.Component {
+  /**
+   * gets random key so the next fact shown is never the same and, when opening
+   * a new tab, you don't always get shown the facts in the same order
+   * @param currentKey {int} key of current active element
+   */
+  _getRandomNumber(currentKey = -1) {
+    const max = this.state.factsLen - 1;
+    const random = Math.floor(Math.random() * max);
+    if (currentKey === random) {
+      return this._getRandomNumber(currentKey);
+    }
+    return random;
+  }
+
+  /**
+   * sets active element to not be active and sets new element to be active
+   */
   _setActiveFact() {
     const state = this.state
 
     state.facts[state.activeKey].active = false;
-    state.activeKey++;
 
-    if (state.activeKey >= state.factsLen) {
-      state.facts[0].active = true;
-      state.activeKey = 0;
-    } else {
-      state.facts[state.activeKey].active = true;
-    }
+    state.activeKey = this._getRandomNumber.call(this, state.activeKey);
+    state.facts[state.activeKey].active = true;
 
     return state;
   }
@@ -30,16 +42,19 @@ export default class SocialMedia extends React.Component {
       facts: props.facts,
     }
 
+    // makes all facts default to not active
     const facts = this.state.facts;
     const factsLen = facts.length;
     for (let i=0; i < factsLen; i++) {
       facts[i].active = false;
     }
 
-    facts[0].active = true;
-    this.state.activeKey = 0;
+    // sets necessary state properties to choose active element
     this.state.factsLen = factsLen;
+    this.state.activeKey = this._getRandomNumber.call(this);
+    facts[this.state.activeKey].active = true;
 
+    // every x seconds (TIME_INTERVAL) update active fact
     setInterval(this.setState.bind(this, this._setActiveFact), TIME_INTERVAL);
   }
 

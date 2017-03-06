@@ -32,7 +32,7 @@ export default class SocialMedia extends React.Component {
               src={ require('../styles/assets/tree-silhouette.svg') } />
           </a>
         </li>
-        {this.state.facebook.link &&
+        {SOCIAL_MEDIA.facebook.link &&
           <li className='social-media__icon'>
             <a href={ this.state.facebook.link }>
               <img className='social-media__icon-image'
