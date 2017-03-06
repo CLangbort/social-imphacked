@@ -22,8 +22,9 @@ class App extends React.Component {
       photographer: data.image.photoCredit,
       web: data.image.photoCreditUrl,
     };
+    debugger;
     const state = {
-      bgImage: 'https://2.bp.blogspot.com/-zsGPooGbMZM/V54l2w2ruyI/AAAAAAAABvQ/w-OBvCy8NMwoHzPQGYejjIsgvUVpePKTwCLcB/s1600/Fern%2BCave.jpg',
+      bgImage: data.image.url,
       parkName: data.park.name, // Used in ParkInfo
       parkLink: data.park.link, // Used in SocialMedia
       parkFacts: data.facts, // Used in ParkFact
