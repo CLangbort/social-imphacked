@@ -1,4 +1,4 @@
-const $ = require ('jquery')
+const $ = require ('jquery');
 
 const PIP_DATA = 'peopleInParksData';
 const FULL_DAY = 60 * 60 * 24 * 1000;
@@ -12,14 +12,14 @@ const _fetchData = function() {
       image: request[0].image,
       park: request[1].park,
       facts: request[2].facts,
-    }
+    };
     record.fetchNewDataTime = new Date().getTime() + FULL_DAY;
 
     localStorage.setItem(PIP_DATA, JSON.stringify(record));
 
     return record;
   });
-}
+};
 
 export default function() {
   const peopleInParksLocalStorage = localStorage.getItem(PIP_DATA);

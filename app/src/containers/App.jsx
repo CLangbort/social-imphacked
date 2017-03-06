@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 import '../styles/app.scss';
-import { Mock } from '../mock.js';
 import LoadData from '../actions/requests.js'
 
 import SocialMedia from '../components/social-media.jsx';
@@ -22,7 +21,6 @@ class App extends React.Component {
       photographer: data.image.photoCredit,
       web: data.image.photoCreditUrl,
     };
-    debugger;
     const state = {
       bgImage: data.image.url,
       parkName: data.park.name, // Used in ParkInfo
