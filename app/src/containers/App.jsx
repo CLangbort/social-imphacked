@@ -6,7 +6,7 @@ import LoadData from '../actions/requests.js'
 import SocialMedia from '../components/social-media.jsx';
 import ParkInfo from '../components/park-info.jsx';
 import ParkFact from '../components/park-fact.jsx';
-import DonateBtn from '../components/donate-btn.jsx';
+import LearnMore from '../components/learn-more.jsx';
 import VideoLink from '../components/video-link.jsx';
 
 const backgroundStyle = {
@@ -57,7 +57,7 @@ class App extends React.Component {
             <VideoLink
               link={ this.state.parkVideo } />
           }
-          <DonateBtn/>
+          <LearnMore/>
           <ParkInfo
             name={ this.state.parkName }
             credit={ this.state.photoCredit }

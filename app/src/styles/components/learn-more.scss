@@ -1,6 +1,6 @@
 $bg-color: rgba(0, 0, 0, .75);
 
-.donate-btn {
+.learn-more {
   position: fixed;
   left: 24px;
   top: 24px;
@@ -9,11 +9,11 @@ $bg-color: rgba(0, 0, 0, .75);
   font-size: 18px;
 }
 
-.donate-btn__link {
+.learn-more__link {
   text-decoration: none;
 }
 
-.donate-btn__info {
+.learn-more__info {
   position: absolute;
   pointer-events: none;
   margin-top: 18px;
@@ -41,7 +41,7 @@ $bg-color: rgba(0, 0, 0, .75);
     border-bottom: 8px solid $bg-color;
   }
 
-  .donate-btn:hover & {
+  .learn-more:hover & {
     left: 0;
     display: block;
     opacity: 1;

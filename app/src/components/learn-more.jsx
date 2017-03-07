@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/components/donate-btn.scss';
+import '../styles/components/learn-more.scss';
 
 const PEOPLE_LINK = 'http://www.peopleinparks.org/';
 
-export default class DonateBtn extends React.Component {
+export default class LearnMore extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,11 +13,11 @@ export default class DonateBtn extends React.Component {
 
   render () {
     return (
-      <div className='donate-btn'>
-        <a href={this.state.peopleLink} className='donate-btn__link'>
+      <div className='learn-more'>
+        <a href={this.state.peopleLink} className='learn-more__link'>
           The Fund for People in Parks
         </a>
-        <div className='donate-btn__info'>
+        <div className='learn-more__info'>
           We assist Western National Parks by supporting their local groups with project funding and professional consulting.  Please visit our site for more information.
         </div>
       </div>
