@@ -2,9 +2,18 @@
 ## Social ImpHacked
 
 This is a chrome extension that was created for the non-profile **People in Parks**
-(http://www.peopleinparks.org/index.html).  When opening a new tab, we show
-a picture from a national park while displaying the time, a fact about the
-park, and more information
+(http://www.peopleinparks.org/index.html). This chrome extension replaces a new
+tab with pictures of national parks while showing the time, various facts, and
+much more.
+
+#### Description
+Celebrate the great outdoors and one of the things that makes America so beautiful
+with a new tab screen of a National Park image brought to you each day. Be inspired
+by the sweeping vistas and striking scenes of America's National Parks. Learn more
+about the park of the day with rotating facts that appear at the bottom of your
+screen, and find photographers who capture the views right in the app. Developed
+for People In Parks, a non-profit dedicated to enhancing the visitor experience
+in western National Parks.
 
 ## Getting Started
 1. Run `npm install`
