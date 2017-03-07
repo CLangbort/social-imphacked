@@ -1,16 +1,16 @@
-$park-fact-size: 900;
-$park-fact-width: $park-fact-size + px;
-$park-fact-margin-left: -($park-fact-size/2) + px;
+$park-facts-size: 900;
+$park-facts-width: $park-facts-size + px;
+$park-facts-margin-left: -($park-facts-size/2) + px;
 
-.park-fact__container {
+.park-facts__container {
   position: fixed;
-  width: $park-fact-width;
+  width: $park-facts-width;
   left: 50%;
-  margin-left: $park-fact-margin-left;
+  margin-left: $park-facts-margin-left;
   bottom: 24px;
 }
 
-.park-fact__list {
+.park-facts__list {
   text-align: center;
 
   opacity: 0;
@@ -18,22 +18,22 @@ $park-fact-margin-left: -($park-fact-size/2) + px;
   animation-delay: 100ms;
 }
 
-.park-fact__fact {
+.park-facts__fact {
   position: absolute;
   bottom: 0;
   list-style: none;
-  width: $park-fact-width;
+  width: $park-facts-width;
 
   opacity: 0;
   transition: opacity 350ms
 }
 
-.park-fact__active {
+.park-facts__active {
   opacity: 1;
   transition: opacity 350ms
 }
 
-.park-fact__btn-text {
+.park-facts__btn-text {
   background: none;
   border: none;
   cursor: pointer;

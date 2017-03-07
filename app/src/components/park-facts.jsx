@@ -1,12 +1,12 @@
 import React from 'react';
-import '../styles/components/park-fact.scss';
+import '../styles/components/park-facts.scss';
 
-const FACT_CLASS = 'park-fact__fact';
-const FACT_ACTIVE_CLASS = 'park-fact__fact park-fact__active';
+const FACT_CLASS = 'park-facts__fact';
+const FACT_ACTIVE_CLASS = 'park-facts__fact park-facts__active';
 
 const TIME_INTERVAL = 5000;
 
-export default class ParkFact extends React.Component {
+export default class ParkFacts extends React.Component {
   /**
    * gets random key so the next fact shown is never the same and, when opening
    * a new tab, you don't always get shown the facts in the same order
@@ -66,15 +66,15 @@ export default class ParkFact extends React.Component {
 
   render () {
     return (
-      <div className='park-fact__container'>
-        <ul className='park-fact__list'>
+      <div className='park-facts__container'>
+        <ul className='park-facts__list'>
           {this.state.facts.map(function(fact, index) {
             return (
               <li
                 key={index}
                 className={!fact.active ? FACT_CLASS : `${FACT_CLASS} ${FACT_ACTIVE_CLASS}`}>
                 <button
-                  className='park-fact__btn-text'
+                  className='park-facts__btn-text'
                   onClick={this._nextFact.bind(this)}>
                   {fact.value}
                 </button>

@@ -5,7 +5,7 @@ import LoadData from '../actions/requests.js'
 
 import SocialMedia from '../components/social-media.jsx';
 import ParkInfo from '../components/park-info.jsx';
-import ParkFact from '../components/park-fact.jsx';
+import ParkFact from '../components/park-facts.jsx';
 import LearnMore from '../components/learn-more.jsx';
 import VideoLink from '../components/video-link.jsx';
 
