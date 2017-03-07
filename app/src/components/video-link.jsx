@@ -6,8 +6,13 @@ const VIDEO_CLASS_BTN_CLOSED = 'video-link__btn-closed';
 const TIMEOUT = 5000;
 
 export default class VideoLink extends React.Component {
+  /**
+   * Used to either open/close the element showing the video button
+   */
   _toggleVideoBtn() {
-    clearTimeout(this.timeout);
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
 
     this.setState((prevState, props) => {
       prevState.open = !prevState.open;
@@ -18,7 +23,6 @@ export default class VideoLink extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      linkText: LINK_TEXT,
       open: true,
     }
 
@@ -32,7 +36,7 @@ export default class VideoLink extends React.Component {
           className='video-link__btn'
           onClick={this._toggleVideoBtn.bind(this)}></button>
         <a href={this.props.link} className='video-link__link'>
-          {this.state.linkText}
+          {LINK_TEXT}
         </a>
       </div>
     );

@@ -3,7 +3,7 @@ import React from 'react';
 const FACT_CLASS = 'park-facts__fact';
 const FACT_ACTIVE_CLASS = 'park-facts__fact park-facts__active';
 
-const TIME_INTERVAL = 5000;
+const TIME_INTERVAL = 30000;
 
 export default class ParkFacts extends React.Component {
   /**
@@ -34,6 +34,9 @@ export default class ParkFacts extends React.Component {
     return state;
   }
 
+  /**
+   * Used if user clicks on fact to see a new fact
+   */
   _nextFact() {
     clearInterval(this.interval);
     this.setState.call(this, this._setActiveFact)
@@ -60,7 +63,7 @@ export default class ParkFacts extends React.Component {
     facts[this.state.activeKey].active = true;
 
     // every x seconds (TIME_INTERVAL) update active fact
-    // this.interval = setInterval(this.setState.bind(this, this._setActiveFact), TIME_INTERVAL);
+    this.interval = setInterval(this.setState.bind(this, this._setActiveFact), TIME_INTERVAL);
   }
 
   render () {

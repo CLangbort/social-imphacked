@@ -3,17 +3,10 @@ import React from 'react';
 const PEOPLE_LINK = 'http://www.peopleinparks.org/';
 
 export default class LearnMore extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      peopleLink: PEOPLE_LINK,
-    }
-  }
-
   render () {
     return (
       <div className='learn-more'>
-        <a href={this.state.peopleLink} className='learn-more__link'>
+        <a href={PEOPLE_LINK} className='learn-more__link'>
           The Fund for People in Parks
         </a>
         <div className='learn-more__info'>
