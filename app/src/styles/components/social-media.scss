@@ -8,17 +8,17 @@ $size: 30px;
 .social-media {
   margin: 0;
   position: fixed;
-  right: 24px;
-  top: 24px;
+  right: $item-spacing-5;
+  top: $item-spacing-5;
 
   opacity: 0;
-  animation: fade-in 600ms forwards;
-  animation-delay: 100ms;
+  animation: fade-in $animation-slow forwards;
+  animation-delay: animation-delay-fast;
 }
 
 .social-media__icon {
   display: inline;
-  padding: 0 8px;
+  padding: 0 $item-spacing-2;
 
   &:last-child {
     padding-right: 0;
@@ -28,9 +28,4 @@ $size: 30px;
 .social-media__icon-image {
   width: $size;
   height: $size;
-}
-
-@keyframes fade-in {
-  from { opacity: 0 }
-  to { opacity: 1 }
 }

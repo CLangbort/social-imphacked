@@ -13,28 +13,23 @@
   cursor: default;
 
   opacity: 0;
-  animation: fade-in 600ms forwards;
-  animation-delay: 250ms;
+  animation: fade-in $animation-slow forwards;
+  animation-delay: animation-delay-slow;
 }
 
 .park-info__photo-credits {
   display: block;
-  font-size: 18px;
+  font-size: $font-size-m;
   line-height: 24px;
   text-align: center;
   text-decoration: none;
 
   opacity: 0;
   transform: translateY(0);
-  transition: opacity 300ms, transform 300ms;
+  transition: opacity $animation-fast, transform $animation-fast;
 
   .park-info:hover & {
     opacity: 1;
     transform: translateY(30px);
   }
-}
-
-@keyframes fade-in {
-  from { opacity: 0 }
-  to { opacity: 1 }
 }

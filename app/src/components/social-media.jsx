@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/components/social-media.scss';
 
 const SOCIAL_MEDIA = {
   facebook: {

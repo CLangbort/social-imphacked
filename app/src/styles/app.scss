@@ -1,3 +1,14 @@
+/* Global styles */
+@import 'global/animations';
+@import 'global/constants';
+
+/* Component styles */
+@import 'components/learn-more';
+@import 'components/park-facts';
+@import 'components/park-info';
+@import 'components/social-media';
+@import 'components/video-link';
+
 /* Reset styles here */
 html, body {
   margin: 0;
@@ -21,15 +32,10 @@ div, a, h1, h2, h3, h4, p, span, ul, button {
   height: 100%;
 
   opacity: 0;
-  animation: fade-in 600ms forwards;
+  animation: fade-in $animation-slow forwards;
 }
 
 .app__info {
   position: relative;
   z-index: 1; // relative to 'app__full-bg-img'
-}
-
-@keyframes fade-in {
-  from { opacity: 0 }
-  to { opacity: 1 }
 }

@@ -1,0 +1,10 @@
+$animation-fast: 300ms;
+$animation-slow: 600ms;
+
+$animation-delay-fast: 100ms;
+$animation-delay-slow: 250ms;
+
+@keyframes fade-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}

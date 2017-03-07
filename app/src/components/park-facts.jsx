@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/components/park-facts.scss';
 
 const FACT_CLASS = 'park-facts__fact';
 const FACT_ACTIVE_CLASS = 'park-facts__fact park-facts__active';

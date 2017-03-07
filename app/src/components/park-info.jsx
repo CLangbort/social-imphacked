@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/components/park-info.scss';
 
 export default class SocialMedia extends React.Component {
   render () {

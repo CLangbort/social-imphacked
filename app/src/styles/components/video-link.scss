@@ -14,11 +14,11 @@ $triangle-color: #ffffff;
   overflow: hidden;
 
   transform: translateX(0);
-  transition: transform 300ms;
+  transition: transform $animation-fast;
 
   opacity: 0;
-  animation: fade-in 600ms forwards;
-  animation-delay: 100ms;
+  animation: fade-in $animation-slow forwards;
+  animation-delay: animation-delay-fast;
 }
 
 .video-link__btn-closed {
@@ -60,11 +60,6 @@ $triangle-color: #ffffff;
   text-align: center;
   margin: auto;
   text-decoration: none;
-  font-size: 14px;
+  font-size: $font-size-s;
   line-height: 20px;
-}
-
-@keyframes fade-in {
-  from { opacity: 0 }
-  to { opacity: 1 }
 }

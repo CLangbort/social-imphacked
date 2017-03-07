@@ -2,11 +2,11 @@ $bg-color: rgba(0, 0, 0, .75);
 
 .learn-more {
   position: fixed;
-  left: 24px;
-  top: 24px;
+  left: $item-spacing-5;
+  top: $item-spacing-5;
   text-decoration: none;
-  border-radius: 4px;
-  font-size: 18px;
+  border-radius: $default-border-radius;
+  font-size: $font-size-m;
 }
 
 .learn-more__link {
@@ -16,23 +16,23 @@ $bg-color: rgba(0, 0, 0, .75);
 .learn-more__info {
   position: absolute;
   pointer-events: none;
-  margin-top: 18px;
-  font-size: 14px;
+  margin-top: $item-spacing-4;
+  font-size: $font-size-s;
   width: 300px;
   line-height: 24px;
-  padding: 12px 18px;
+  padding: $item-spacing-3 $item-spacing-4;
   background: $bg-color;
-  border-radius: 4px;
+  border-radius: $default-border-radius;
 
   opacity: 0;
-  transition: opacity 300ms;
-  transition-delay: 100ms;
+  transition: opacity $animation-fast;
+  transition-delay: animation-delay-fast;
 
   &::before {
     content: '';
     display: block;
     position: absolute;
-    top: -8px;
+    top: -$item-spacing-2;
     left: 45px;
 
     // Define triangle

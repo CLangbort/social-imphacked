@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/components/video-link.scss';
 
 const LINK_TEXT = 'Come check out our video!';
 const VIDEO_CLASS = 'video-link__container';

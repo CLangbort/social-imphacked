@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/components/learn-more.scss';
 
 const PEOPLE_LINK = 'http://www.peopleinparks.org/';
 

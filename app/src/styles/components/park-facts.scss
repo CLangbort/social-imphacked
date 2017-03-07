@@ -7,15 +7,15 @@ $park-facts-margin-left: -($park-facts-size/2) + px;
   width: $park-facts-width;
   left: 50%;
   margin-left: $park-facts-margin-left;
-  bottom: 24px;
+  bottom: $item-spacing-4;
 }
 
 .park-facts__list {
   text-align: center;
 
   opacity: 0;
-  animation: fade-in 600ms forwards;
-  animation-delay: 100ms;
+  animation: fade-in $animation-slow forwards;
+  animation-delay: animation-delay-fast;
 }
 
 .park-facts__fact {
@@ -25,12 +25,12 @@ $park-facts-margin-left: -($park-facts-size/2) + px;
   width: $park-facts-width;
 
   opacity: 0;
-  transition: opacity 350ms
+  transition: opacity $animation-fast;
 }
 
 .park-facts__active {
   opacity: 1;
-  transition: opacity 350ms
+  transition: opacity $animation-fast;
 }
 
 .park-facts__btn-text {
@@ -38,10 +38,5 @@ $park-facts-margin-left: -($park-facts-size/2) + px;
   border: none;
   cursor: pointer;
   line-height: 28px;
-  font-size: 18px;
-}
-
-@keyframes fade-in {
-  from { opacity: 0 }
-  to { opacity: 1 }
+  font-size: $font-size-m;
 }
