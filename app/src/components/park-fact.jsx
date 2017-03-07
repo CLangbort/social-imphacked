@@ -6,7 +6,7 @@ const FACT_ACTIVE_CLASS = 'park-fact__fact park-fact__active';
 
 const TIME_INTERVAL = 5000;
 
-export default class SocialMedia extends React.Component {
+export default class ParkFact extends React.Component {
   /**
    * gets random key so the next fact shown is never the same and, when opening
    * a new tab, you don't always get shown the facts in the same order
@@ -68,9 +68,11 @@ export default class SocialMedia extends React.Component {
     return (
       <div className='park-fact__container'>
         <ul className='park-fact__list'>
-          {this.state.facts.map(function(fact) {
+          {this.state.facts.map(function(fact, index) {
             return (
-              <li className={!fact.active ? FACT_CLASS : `${FACT_CLASS} ${FACT_ACTIVE_CLASS}`}>
+              <li
+                key={index}
+                className={!fact.active ? FACT_CLASS : `${FACT_CLASS} ${FACT_ACTIVE_CLASS}`}>
                 <button
                   className='park-fact__btn-text'
                   onClick={this._nextFact.bind(this)}>

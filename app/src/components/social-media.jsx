@@ -14,15 +14,6 @@ const SOCIAL_MEDIA = {
 }
 
 export default class SocialMedia extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      facebook: SOCIAL_MEDIA.facebook,
-      insta: SOCIAL_MEDIA.insta,
-      youtube: SOCIAL_MEDIA.youtube,
-    };
-  }
-
   render () {
     return (
       <ul className='social-media'>
@@ -34,23 +25,23 @@ export default class SocialMedia extends React.Component {
         </li>
         {SOCIAL_MEDIA.facebook.link &&
           <li className='social-media__icon'>
-            <a href={ this.state.facebook.link }>
+            <a href={ SOCIAL_MEDIA.facebook.link }>
               <img className='social-media__icon-image'
                 src={ require('../styles/assets/fb-icon.svg') } />
             </a>
           </li>
         }
-        {this.state.youtube.link &&
+        {SOCIAL_MEDIA.youtube.link &&
           <li className='social-media__icon'>
-            <a href={ this.state.youtube.link }>
+            <a href={ SOCIAL_MEDIA.youtube.link }>
               <img className='social-media__icon-image'
                 src={ require('../styles/assets/youtube-icon.svg') } />
             </a>
           </li>
         }
-        {this.state.insta.link &&
+        {SOCIAL_MEDIA.insta.link &&
           <li className='social-media__icon'>
-            <a href={ this.state.insta.link }>
+            <a href={ SOCIAL_MEDIA.insta.link }>
               <img className='social-media__icon-image'
                 src={ require('../styles/assets/insta-icon.svg') } />
             </a>
